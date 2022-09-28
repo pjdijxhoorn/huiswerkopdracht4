@@ -1,6 +1,6 @@
 package novi.basics;
 
-public class Pokemon {
+public abstract class Pokemon {
     private String Name;
     private int level;
     private int hp;
@@ -8,9 +8,10 @@ public class Pokemon {
     private String food;
 // constructor(s) ----------------------------------------------------------------------------------
 
-    public Pokemon(){
+    public Pokemon() {
 
     }
+
     public Pokemon(String name, int level, int hp, String sound, String food) {
         Name = name;
         this.level = level;
@@ -18,21 +19,7 @@ public class Pokemon {
         this.sound = sound;
         this.food = food;
     }
-
-// methods ----------------------------------------------------------------------------------
-    public void moves(String moves){
-        System.out.println(getName()+" " + moves+".");
-    }
-
-    public  void eats(){
-        System.out.println(getName()+" likes to eat "+ getFood()+".");
-    }
-
-    public void ability(){
-        System.out.println(getName() + " has the ability of tackle.");
-    }
-
-// gettersNsetters -----------------------------------------------------------------------------
+    // gettersNsetters -----------------------------------------------------------------------------
 
     public String getName() {
         return Name;
@@ -75,5 +62,20 @@ public class Pokemon {
     }
 
 
+// methods ----------------------------------------------------------------------------------
 
+    public abstract void printPokemon();
+
+    public void moves(String moves) {
+        System.out.println(getName() + " " + moves + ".");
+    }
+
+    public void eats() {
+        System.out.println(getName() + " likes to eat " + getFood() + ".");
+    }
+
+    public void ability() {
+        System.out.println(getName() + " has the ability of tackle.");
+    }
 }
+
